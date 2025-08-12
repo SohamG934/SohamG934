@@ -15,8 +15,8 @@
 
 ## 🚀 About Me
 
-- 🎓 Final-year student pursuing a **Bachelor's in Information Technology**
-- 💡 Specialized in **Machine Learning**, **Generative AI**, **LLMs**, and **Full-Stack Systems**
+- 🎓 AI Engineer with a **Bachelor's in Information Technology**
+- 💡 Specialized in **Machine Learning**, **Generative AI**, **LLMs**, and **Full-Stack Agentic Systems**
 - 🧠 Focus Areas: LLM Agents, RAG Pipelines, AI Workflow Automation, Multi-modal AI
 - 🔬 Notable Projects: **ALLM**, **Docs2Answer**, **Automated Workflow Agents**, **GAN-based Feature Extraction**, **Neural Style Transfer Suite**
 - 🌐 Deployment: Vertex AI, Azure AI, Docker, WebSockets, Flutter
