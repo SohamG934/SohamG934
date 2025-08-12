@@ -24,7 +24,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # built-in, no need to create
           MEDIUM_URL: "https://medium.com/feed/@sohamghadge0903"
-        run: node update-readme.js
+        run: node .github/scripts/update-readme.js
 
       - name: Commit changes
         run: |
