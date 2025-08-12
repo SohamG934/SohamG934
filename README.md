@@ -53,6 +53,10 @@
 
 ## 📌 Latest Projects
 <!-- PROJECTS:START -->
+- [SohamG934](https://github.com/SohamG934/SohamG934) — No description
+- [osteo](https://github.com/SohamG934/osteo) — No description
+- [face-recognition](https://github.com/SohamG934/face-recognition) — No description
+- [donna](https://github.com/SohamG934/donna) — No description
 <!-- PROJECTS:END -->
 
 ---
@@ -65,6 +69,7 @@
 
 ## 🔄 Recent Commits & Contributions
 <!-- COMMITS:START -->
+
 <!-- COMMITS:END -->
 
 ---
