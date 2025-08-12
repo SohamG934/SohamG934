@@ -6,36 +6,42 @@ const github = require('@actions/github');
 (async () => {
   const readmePath = 'README.md';
   let readme = fs.readFileSync(readmePath, 'utf8');
-
-  // GitHub client
   const octokit = github.getOctokit(process.env.GITHUB_TOKEN);
 
-  // ===== Latest Projects =====
-  const repos = await octokit.rest.repos.listForUser({
-    username: 'sohamg934',
-    sort: 'updated',
-    per_page: 5
-  });
-
-  const projectList = repos.data
-    .filter(r => !r.fork)
-    .map(r => `- [${r.name}](${r.html_url}) — ${r.description || "No description"}`)
-    .join('\n');
-
-  readme = readme.replace(
-    /<!-- PROJECTS:START -->[\s\S]*<!-- PROJECTS:END -->/,
-    `<!-- PROJECTS:START -->\n${projectList}\n<!-- PROJECTS:END -->`
-  );
-
-  // ===== Medium Posts =====
+  // ===== 1. Latest Projects =====
   try {
-    const mediumFeed = await fetch('https://medium.com/@sohamghadge0903');
+    const repos = await octokit.rest.repos.listForUser({
+      username: 'sohamg934',
+      sort: 'updated',
+      per_page: 5
+    });
+
+    const projectList = repos.data
+      .filter(r => !r.fork)
+      .map(r => `- [${r.name}](${r.html_url}) — ${r.description || "No description"}`)
+      .join('\n') || "No recent projects found.";
+
+    readme = readme.replace(
+      /<!-- PROJECTS:START -->[\s\S]*<!-- PROJECTS:END -->/,
+      `<!-- PROJECTS:START -->\n${projectList}\n<!-- PROJECTS:END -->`
+    );
+  } catch (err) {
+    console.error("Error fetching projects:", err.message);
+  }
+
+  // ===== 2. Medium Blog Posts =====
+  try {
+    const mediumFeed = await fetch(process.env.MEDIUM_URL);
     const mediumXML = await mediumFeed.text();
     const mediumJSON = await parser(mediumXML);
 
+    if (!mediumJSON.rss || !mediumJSON.rss.channel) {
+      throw new Error("Invalid Medium RSS feed structure");
+    }
+
     const posts = mediumJSON.rss.channel[0].item.slice(0, 5)
       .map(p => `- [${p.title[0]}](${p.link[0]})`)
-      .join('\n');
+      .join('\n') || "No blog posts found.";
 
     readme = readme.replace(
       /<!-- BLOG-POSTS:START -->[\s\S]*<!-- BLOG-POSTS:END -->/,
@@ -45,27 +51,43 @@ const github = require('@actions/github');
     console.error("Error fetching Medium posts:", err.message);
   }
 
-  // ===== Recent Commits =====
-  const events = await octokit.rest.activity.listPublicEventsForUser({
-    username: 'sohamg934',
-    per_page: 10
-  });
+  // ===== 3. Recent Commits =====
+  try {
+    const repos = await octokit.rest.repos.listForUser({
+      username: 'sohamg934',
+      sort: 'updated',
+      per_page: 3 // only check the top few repos
+    });
 
-  const commitList = events.data
-    .filter(e => e.type === 'PushEvent')
-    .flatMap(e => e.payload.commits.map(c => ({
-      repo: e.repo.name,
-      message: c.message,
-      url: `https://github.com/${e.repo.name}/commit/${c.sha}`
-    })))
-    .slice(0, 5)
-    .map(c => `- [${c.message}](${c.url}) — _${c.repo}_`)
-    .join('\n');
+    let commitList = [];
 
-  readme = readme.replace(
-    /<!-- COMMITS:START -->[\s\S]*<!-- COMMITS:END -->/,
-    `<!-- COMMITS:START -->\n${commitList}\n<!-- COMMITS:END -->`
-  );
+    for (const repo of repos.data.filter(r => !r.fork)) {
+      const commits = await octokit.rest.repos.listCommits({
+        owner: repo.owner.login,
+        repo: repo.name,
+        per_page: 2
+      });
 
+      commitList.push(...commits.data.map(c => ({
+        repo: `${repo.owner.login}/${repo.name}`,
+        message: c.commit.message,
+        url: c.html_url
+      })));
+    }
+
+    const formattedCommits = commitList.slice(0, 5)
+      .map(c => `- [${c.message}](${c.url}) — _${c.repo}_`)
+      .join('\n') || "No recent commits found.";
+
+    readme = readme.replace(
+      /<!-- COMMITS:START -->[\s\S]*<!-- COMMITS:END -->/,
+      `<!-- COMMITS:START -->\n${formattedCommits}\n<!-- COMMITS:END -->`
+    );
+  } catch (err) {
+    console.error("Error fetching commits:", err.message);
+  }
+
+  // ===== Save Updated README =====
   fs.writeFileSync(readmePath, readme);
+  console.log("README.md updated successfully!");
 })();
