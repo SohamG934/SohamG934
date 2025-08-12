@@ -2,31 +2,34 @@ name: Update README
 
 on:
   schedule:
-    - cron: "0 6 * * *" # Runs every day at 6 AM UTC
-  workflow_dispatch: # Manual trigger
+    - cron: "0 6 * * *" # runs every hour, change if needed
+  workflow_dispatch:
 
 jobs:
   update-readme:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-      - name: Install Node.js
+      - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18'
+          node-version: "18"
 
-      - name: Install Dependencies
-        run: npm install xml2js node-fetch@2 @actions/github @actions/core
+      - name: Install dependencies
+        run: npm install
 
-      - name: Run Update Script
-        run: node .github/scripts/update-readme.js
+      - name: Run update script
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # ← built-in, no need to create
+          MEDIUM_URL: "https://medium.com/feed/@sohamghadge0903" # ← replace with your feed URL
+        run: node update-readme.js
 
-      - name: Commit & Push changes
+      - name: Commit changes
         run: |
-          git config --global user.name "github-actions"
-          git config --global user.email "github-actions@github.com"
-          git commit -am "Updated README with latest projects, posts, and commits" || echo "No changes to commit"
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git commit -m "Update README"
           git push
