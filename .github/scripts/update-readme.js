@@ -1,6 +1,5 @@
 const fs = require('fs');
 const fetch = require('node-fetch');
-const parser = require('xml2js').parseStringPromise;
 const github = require('@actions/github');
 
 (async () => {
@@ -29,19 +28,19 @@ const github = require('@actions/github');
     console.error("Error fetching projects:", err.message);
   }
 
-  // ===== 2. Medium Blog Posts =====
+  // ===== 2. Medium Blog Posts (via rss2json) =====
   try {
-    const mediumFeed = await fetch(process.env.MEDIUM_URL);
-    const mediumXML = await mediumFeed.text();
-    const mediumJSON = await parser(mediumXML);
+    const rssUrl = encodeURIComponent(process.env.MEDIUM_URL);
+    const res = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${rssUrl}`);
+    const data = await res.json();
 
-    if (!mediumJSON.rss || !mediumJSON.rss.channel) {
-      throw new Error("Invalid Medium RSS feed structure");
+    if (!data.items || data.items.length === 0) {
+      throw new Error("No blog posts found in feed");
     }
 
-    const posts = mediumJSON.rss.channel[0].item.slice(0, 5)
-      .map(p => `- [${p.title[0]}](${p.link[0]})`)
-      .join('\n') || "No blog posts found.";
+    const posts = data.items.slice(0, 5)
+      .map(p => `- [${p.title}](${p.link})`)
+      .join('\n');
 
     readme = readme.replace(
       /<!-- BLOG-POSTS:START -->[\s\S]*<!-- BLOG-POSTS:END -->/,
@@ -56,7 +55,7 @@ const github = require('@actions/github');
     const repos = await octokit.rest.repos.listForUser({
       username: 'sohamg934',
       sort: 'updated',
-      per_page: 3 // only check the top few repos
+      per_page: 3
     });
 
     let commitList = [];
