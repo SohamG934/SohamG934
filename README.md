@@ -63,14 +63,16 @@
 
 ## 📝 Latest Blog Posts
 <!-- BLOG-POSTS:START -->
+- [AI Agents 101: The Who, What, and How](https://medium.com/@sohamghadge0903/ai-agents-101-the-who-what-and-how-edee14f1ebdb?source=rss-cd53dd268d64------2)
+- [RAG vs. Long-Context LLMs: The Ultimate AI Showdown](https://medium.com/@sohamghadge0903/rag-vs-long-context-llms-the-ultimate-ai-showdown-17d7e3659f76?source=rss-cd53dd268d64------2)
 <!-- BLOG-POSTS:END -->
 
 ---
 
 ## 🔄 Recent Commits & Contributions
 <!-- COMMITS:START -->
-- [Update update-readme.js](https://github.com/SohamG934/SohamG934/commit/a7428636613f429b8066f61eacb9900eb45a707d) — _SohamG934/SohamG934_
-- [Update profile-readme.yml](https://github.com/SohamG934/SohamG934/commit/d3ec5e2b022699bedf9d29b5e4f70e00f5a68b09) — _SohamG934/SohamG934_
+- [Update update-readme.js](https://github.com/SohamG934/SohamG934/commit/0552265f74da028aaa8201f76a9ae177213a8917) — _SohamG934/SohamG934_
+- [Update README](https://github.com/SohamG934/SohamG934/commit/b3481acfc39bd280ae1856ad00b0952c1b925acb) — _SohamG934/SohamG934_
 - [Update DOCKERFILE](https://github.com/SohamG934/osteo/commit/4724af74b36e1520cba06a0e2d264f1b1fe4f196) — _SohamG934/osteo_
 - [Create DOCKERFILE](https://github.com/SohamG934/osteo/commit/e9d7359038c51cb3dd46a34893dd323a3dd6166e) — _SohamG934/osteo_
 <!-- COMMITS:END -->
