@@ -29,7 +29,7 @@ const github = require('@actions/github');
 
   // ===== Medium Posts =====
   try {
-    const mediumFeed = await fetch('https://medium.com/feed/@sohamghadge0903');
+    const mediumFeed = await fetch('https://medium.com/@sohamghadge0903');
     const mediumXML = await mediumFeed.text();
     const mediumJSON = await parser(mediumXML);
 
