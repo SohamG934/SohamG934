@@ -1,0 +1,96 @@
+name: Update README
+
+on:
+  schedule:
+    - cron: "0 6 * * *"  # Runs every day at 6 AM UTC
+  workflow_dispatch:      # Allows manual trigger from Actions tab
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install Dependencies
+        run: npm install xml2js node-fetch@2
+
+      - name: Update README
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const fs = require('fs');
+            const fetch = require('node-fetch');
+            const parser = require('xml2js').parseStringPromise;
+
+            let readme = fs.readFileSync('README.md', 'utf8');
+
+            // ========== Fetch Latest Projects ==========
+            const repos = await github.repos.listForUser({
+              username: 'sohamg934',
+              sort: 'updated',
+              per_page: 5
+            });
+
+            const projectList = repos.data
+              .filter(r => !r.fork)
+              .map(r => `- [${r.name}](${r.html_url}) — ${r.description || "No description"}`)
+              .join('\n');
+
+            readme = readme.replace(
+              /<!-- PROJECTS:START -->[\\s\\S]*<!-- PROJECTS:END -->/,
+              `<!-- PROJECTS:START -->\n${projectList}\n<!-- PROJECTS:END -->`
+            );
+
+            // ========== Fetch Latest Medium Blog Posts ==========
+            try {
+              const mediumFeed = await fetch('https://medium.com/feed/@sohamghadge0903');
+              const mediumXML = await mediumFeed.text();
+              const mediumJSON = await parser(mediumXML);
+
+              const posts = mediumJSON.rss.channel[0].item.slice(0, 5)
+                .map(p => `- [${p.title[0]}](${p.link[0]})`)
+                .join('\n');
+
+              readme = readme.replace(
+                /<!-- BLOG-POSTS:START -->[\\s\\S]*<!-- BLOG-POSTS:END -->/,
+                `<!-- BLOG-POSTS:START -->\n${posts}\n<!-- BLOG-POSTS:END -->`
+              );
+            } catch (err) {
+              console.error("Error fetching Medium posts:", err.message);
+            }
+
+            // ========== Fetch Recent Commits ==========
+            const events = await github.activity.listPublicEventsForUser({
+              username: 'sohamg934',
+              per_page: 10
+            });
+
+            const commitList = events.data
+              .filter(e => e.type === 'PushEvent')
+              .flatMap(e => e.payload.commits.map(c => ({
+                repo: e.repo.name,
+                message: c.message,
+                url: `https://github.com/${e.repo.name}/commit/${c.sha}`
+              })))
+              .slice(0, 5)
+              .map(c => `- [${c.message}](${c.url}) — _${c.repo}_`)
+              .join('\n');
+
+            readme = readme.replace(
+              /<!-- COMMITS:START -->[\\s\\S]*<!-- COMMITS:END -->/,
+              `<!-- COMMITS:START -->\n${commitList}\n<!-- COMMITS:END -->`
+            );
+
+            fs.writeFileSync('README.md', readme);
+
+      - name: Commit & Push changes
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          git commit -am "Updated README with latest projects, posts, and commits"
+          git push
