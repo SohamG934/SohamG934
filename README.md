@@ -53,10 +53,10 @@
 
 ## 📌 Latest Projects
 <!-- PROJECTS:START -->
-- [SohamG934](https://github.com/SohamG934/SohamG934) — No description
-- [osteo](https://github.com/SohamG934/osteo) — No description
-- [face-recognition](https://github.com/SohamG934/face-recognition) — No description
-- [donna](https://github.com/SohamG934/donna) — No description
+- [donna](https://github.com/SohamG934/donna) — Donna is an end to end legal AI assistant. Yes, its named after THE Donna :)
+- [osteo](https://github.com/SohamG934/osteo) — Osteoporesis detection and AI report generation system
+- [SohamG934](https://github.com/SohamG934/SohamG934) — Profile repo
+- [ML](https://github.com/SohamG934/ML) — No description
 <!-- PROJECTS:END -->
 
 ---
@@ -71,10 +71,11 @@
 
 ## 🔄 Recent Commits & Contributions
 <!-- COMMITS:START -->
-- [Update README.md](https://github.com/SohamG934/SohamG934/commit/5015f3a9bd9ec70bbf7a33469c1b8c5ba816aeaa) — _SohamG934/SohamG934_
-- [Update README](https://github.com/SohamG934/SohamG934/commit/470e02e4d86fcf54fb944907b3ef2a0b44f3a31f) — _SohamG934/SohamG934_
+- [Delete attached_assets/Pasted--Prompt-for-Full-Stack-AI-Legal-Assistant-Application-Design-and-develop-a-full-stack-AI-1742109955821.txt](https://github.com/SohamG934/donna/commit/e39c6c878852a53ff55d039cde0ff8b954beea95) — _SohamG934/donna_
+- [initial commit](https://github.com/SohamG934/donna/commit/79f9ccc7fd17d6a3a23da4d48d7e3fb472fbd52a) — _SohamG934/donna_
 - [Update DOCKERFILE](https://github.com/SohamG934/osteo/commit/4724af74b36e1520cba06a0e2d264f1b1fe4f196) — _SohamG934/osteo_
 - [Create DOCKERFILE](https://github.com/SohamG934/osteo/commit/e9d7359038c51cb3dd46a34893dd323a3dd6166e) — _SohamG934/osteo_
+- [Update README](https://github.com/SohamG934/SohamG934/commit/26d73d4df100fc14122f557d55235168128476bf) — _SohamG934/SohamG934_
 <!-- COMMITS:END -->
 
 ---
