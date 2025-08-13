@@ -71,8 +71,8 @@
 
 ## 🔄 Recent Commits & Contributions
 <!-- COMMITS:START -->
-- [Update update-readme.js](https://github.com/SohamG934/SohamG934/commit/0552265f74da028aaa8201f76a9ae177213a8917) — _SohamG934/SohamG934_
-- [Update README](https://github.com/SohamG934/SohamG934/commit/b3481acfc39bd280ae1856ad00b0952c1b925acb) — _SohamG934/SohamG934_
+- [Update README.md](https://github.com/SohamG934/SohamG934/commit/5015f3a9bd9ec70bbf7a33469c1b8c5ba816aeaa) — _SohamG934/SohamG934_
+- [Update README](https://github.com/SohamG934/SohamG934/commit/470e02e4d86fcf54fb944907b3ef2a0b44f3a31f) — _SohamG934/SohamG934_
 - [Update DOCKERFILE](https://github.com/SohamG934/osteo/commit/4724af74b36e1520cba06a0e2d264f1b1fe4f196) — _SohamG934/osteo_
 - [Create DOCKERFILE](https://github.com/SohamG934/osteo/commit/e9d7359038c51cb3dd46a34893dd323a3dd6166e) — _SohamG934/osteo_
 <!-- COMMITS:END -->
