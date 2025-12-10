@@ -53,8 +53,8 @@
 
 ## 📌 Latest Projects
 <!-- PROJECTS:START -->
-- [agentic-retrieval](https://github.com/SohamG934/agentic-retrieval) — A simple demonstration of agentic hybrid retrieval using opensearch
 - [SohamG934](https://github.com/SohamG934/SohamG934) — Profile repo
+- [agentic-retrieval](https://github.com/SohamG934/agentic-retrieval) — A simple demonstration of agentic hybrid retrieval using opensearch
 - [donna](https://github.com/SohamG934/donna) — Donna is an end to end legal AI assistant. Yes, its named after THE Donna :)
 - [osteo](https://github.com/SohamG934/osteo) — Osteoporesis detection and AI report generation system
 <!-- PROJECTS:END -->
@@ -71,9 +71,9 @@
 
 ## 🔄 Recent Commits & Contributions
 <!-- COMMITS:START -->
-- [initial commit](https://github.com/SohamG934/agentic-retrieval/commit/903a8c650e4129e2e2c15c7be65cb67ab0be7872) — _SohamG934/agentic-retrieval_
+- [Update README](https://github.com/SohamG934/SohamG934/commit/1fa6c94dadad5fb9b9c6a49f6e727953efc086f9) — _SohamG934/SohamG934_
 - [Update README](https://github.com/SohamG934/SohamG934/commit/834bdce03e881537238e55f49fe36dd6c45736af) — _SohamG934/SohamG934_
-- [Update README](https://github.com/SohamG934/SohamG934/commit/1f34adb43ec79f4abe5f7da817592690534cde35) — _SohamG934/SohamG934_
+- [initial commit](https://github.com/SohamG934/agentic-retrieval/commit/903a8c650e4129e2e2c15c7be65cb67ab0be7872) — _SohamG934/agentic-retrieval_
 - [Delete attached_assets/Pasted--Prompt-for-Full-Stack-AI-Legal-Assistant-Application-Design-and-develop-a-full-stack-AI-1742109955821.txt](https://github.com/SohamG934/donna/commit/e39c6c878852a53ff55d039cde0ff8b954beea95) — _SohamG934/donna_
 - [initial commit](https://github.com/SohamG934/donna/commit/79f9ccc7fd17d6a3a23da4d48d7e3fb472fbd52a) — _SohamG934/donna_
 <!-- COMMITS:END -->
