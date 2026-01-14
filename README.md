@@ -71,8 +71,8 @@
 
 ## 🔄 Recent Commits & Contributions
 <!-- COMMITS:START -->
+- [Update README](https://github.com/SohamG934/SohamG934/commit/d743318b3df43ed4db8ac6e87e637c88b5c64820) — _SohamG934/SohamG934_
 - [Update README](https://github.com/SohamG934/SohamG934/commit/c81b085b46ae01d8d34db9d9a4753aa487132916) — _SohamG934/SohamG934_
-- [Update README](https://github.com/SohamG934/SohamG934/commit/ca14366713aa9be3db02785e805affdd23b16cfa) — _SohamG934/SohamG934_
 - [changed readme](https://github.com/SohamG934/agentic-retrieval/commit/bd23ae99418e726a63832d97579251221065b6dc) — _SohamG934/agentic-retrieval_
 - [initial commit](https://github.com/SohamG934/agentic-retrieval/commit/903a8c650e4129e2e2c15c7be65cb67ab0be7872) — _SohamG934/agentic-retrieval_
 - [Delete attached_assets/Pasted--Prompt-for-Full-Stack-AI-Legal-Assistant-Application-Design-and-develop-a-full-stack-AI-1742109955821.txt](https://github.com/SohamG934/donna/commit/e39c6c878852a53ff55d039cde0ff8b954beea95) — _SohamG934/donna_
