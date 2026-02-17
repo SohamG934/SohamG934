@@ -18,11 +18,11 @@ jobs:
           node-version: "20"
 
       - name: Install required dependencies
-        run: npm install node-fetch@2 xml2js @actions/github
+        run: npm install node-fetch@2 @octokit/rest
 
       - name: Run update script
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # built-in, no need to create
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           MEDIUM_URL: "https://medium.com/feed/@sohamghadge0903"
         run: node .github/scripts/update-readme.js
 
