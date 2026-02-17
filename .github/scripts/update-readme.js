@@ -1,11 +1,11 @@
 const fs = require('fs');
 const fetch = require('node-fetch');
-const github = require('@actions/github');
+const { Octokit } = require('@octokit/rest');
 
 (async () => {
   const readmePath = 'README.md';
   let readme = fs.readFileSync(readmePath, 'utf8');
-  const octokit = github.getOctokit(process.env.GITHUB_TOKEN);
+  const octokit = new Octokit({ auth: process.env.GITHUB_TOKEN });
 
   // ===== 1. Latest Projects =====
   try {
