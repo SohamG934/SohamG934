@@ -71,8 +71,8 @@
 
 ## 🔄 Recent Commits & Contributions
 <!-- COMMITS:START -->
+- [Update README](https://github.com/SohamG934/SohamG934/commit/0630d7aa283760b14a89c6acb2495866e12196ab) — _SohamG934/SohamG934_
 - [Refactor README update script to use Octokit](https://github.com/SohamG934/SohamG934/commit/486862fdcde61d14fc8a0824d4e55254537eef54) — _SohamG934/SohamG934_
-- [Update dependencies and GitHub Actions workflow](https://github.com/SohamG934/SohamG934/commit/7c80336f77831287cdef8f3c8d10428dc5a8be9a) — _SohamG934/SohamG934_
 - [changed readme](https://github.com/SohamG934/agentic-retrieval/commit/bd23ae99418e726a63832d97579251221065b6dc) — _SohamG934/agentic-retrieval_
 - [initial commit](https://github.com/SohamG934/agentic-retrieval/commit/903a8c650e4129e2e2c15c7be65cb67ab0be7872) — _SohamG934/agentic-retrieval_
 - [Delete attached_assets/Pasted--Prompt-for-Full-Stack-AI-Legal-Assistant-Application-Design-and-develop-a-full-stack-AI-1742109955821.txt](https://github.com/SohamG934/donna/commit/e39c6c878852a53ff55d039cde0ff8b954beea95) — _SohamG934/donna_
