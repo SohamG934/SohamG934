@@ -63,6 +63,7 @@
 
 ## 📝 Latest Blog Posts
 <!-- BLOG-POSTS:START -->
+- [Artificial Intelligence in Regulatory Governance: Capabilities, Boundaries and Oversight for…](https://medium.com/@sohamghadge0903/artificial-intelligence-in-regulatory-governance-capabilities-boundaries-and-oversight-for-f5f8a84797f8?source=rss-cd53dd268d64------2)
 - [AI Agents 101: The Who, What, and How](https://medium.com/@sohamghadge0903/ai-agents-101-the-who-what-and-how-edee14f1ebdb?source=rss-cd53dd268d64------2)
 - [RAG vs. Long-Context LLMs: The Ultimate AI Showdown](https://medium.com/@sohamghadge0903/rag-vs-long-context-llms-the-ultimate-ai-showdown-17d7e3659f76?source=rss-cd53dd268d64------2)
 <!-- BLOG-POSTS:END -->
@@ -71,8 +72,8 @@
 
 ## 🔄 Recent Commits & Contributions
 <!-- COMMITS:START -->
+- [Update README](https://github.com/SohamG934/SohamG934/commit/881f846fa40463e07b15665be1fb344637aa9f06) — _SohamG934/SohamG934_
 - [Update README](https://github.com/SohamG934/SohamG934/commit/dba5edecc7aff8a926616a4d2d7295715ff4115b) — _SohamG934/SohamG934_
-- [Update README](https://github.com/SohamG934/SohamG934/commit/15025cd39bac006a3fbca8406c6d76dfff095370) — _SohamG934/SohamG934_
 - [changed readme](https://github.com/SohamG934/agentic-retrieval/commit/bd23ae99418e726a63832d97579251221065b6dc) — _SohamG934/agentic-retrieval_
 - [initial commit](https://github.com/SohamG934/agentic-retrieval/commit/903a8c650e4129e2e2c15c7be65cb67ab0be7872) — _SohamG934/agentic-retrieval_
 <!-- COMMITS:END -->
