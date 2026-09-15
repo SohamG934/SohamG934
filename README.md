@@ -72,8 +72,8 @@
 
 ## 🔄 Recent Commits & Contributions
 <!-- COMMITS:START -->
+- [Update README](https://github.com/SohamG934/SohamG934/commit/2e049b61cb7910d1778c4488ead923fae173f68d) — _SohamG934/SohamG934_
 - [Update README](https://github.com/SohamG934/SohamG934/commit/c428886b2397b84706c686ee511dd49b9126b104) — _SohamG934/SohamG934_
-- [Update README](https://github.com/SohamG934/SohamG934/commit/4c1a82decd084d2305766fba354c08b0f7a7ceca) — _SohamG934/SohamG934_
 - [changed readme](https://github.com/SohamG934/agentic-retrieval/commit/bd23ae99418e726a63832d97579251221065b6dc) — _SohamG934/agentic-retrieval_
 - [initial commit](https://github.com/SohamG934/agentic-retrieval/commit/903a8c650e4129e2e2c15c7be65cb67ab0be7872) — _SohamG934/agentic-retrieval_
 <!-- COMMITS:END -->
